@@ -1,0 +1,24 @@
+KTCC CONTENT STUDIO v4 — AKTIVASI ADMIN
+======================================
+
+Alamat frontend setelah menjalankan server: http://localhost:3000
+Alamat login admin: http://localhost:3000/admin/login
+Alamat panel admin: http://localhost:3000/admin
+Username administrator: admin
+
+Password administrator tidak disertakan di kode sumber dan harus didaftarkan melalui Supabase Auth. Gunakan password unik yang kuat (lebih baik ganti password yang sudah pernah ditulis di chat).
+
+Cara singkat:
+1. Buat proyek Supabase terpisah khusus KTCC pada organisasi pilihan Anda.
+2. Jalankan supabase/schema.sql, supabase/cms_migration.sql, dan supabase/visual_editor_migration.sql berurutan di Supabase SQL Editor.
+3. Salin .env.example ke .env.local. Isi NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY, NEXT_PUBLIC_KTCC_ADMIN_EMAIL.
+4. Tambahkan SUPABASE_SERVICE_ROLE_KEY hanya di .env.local pada komputer Anda untuk proses bootstrap satu kali. Jangan unggah key tersebut ke Git/Vercel/chat.
+5. Jalankan npm install lalu npm run setup:admin. Ketik password melalui prompt yang menyembunyikan ketikan.
+6. Jalankan npm run dev; login di /admin/login dengan username admin.
+7. Dari /admin, edit Halaman, Blok Konten, Katalog, Media, Teks Situs, Editor Visual, Warna, Maskot Cece, Bagian Beranda, Pengaturan, dan Permintaan.
+
+Catatan penting:
+- Backend produksi belum diaktifkan karena belum ada proyek Supabase KTCC yang dipilih/dibuat.
+- Kode sudah diperiksa secara statis, tetapi build Next.js penuh dan tes login belum dilakukan di lingkungan ini.
+- CMS mengelola konten dan visibilitas bagian frontend, bukan menulis ulang logika aplikasi atau seluruh desain komponen kustom.
+- Bacalah ADMIN_SETUP.md untuk panduan lengkap.
